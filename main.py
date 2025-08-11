@@ -133,3 +133,10 @@ async def websocket_endpoint(websocket: WebSocket):
         print("Client disconnected")
     except Exception as e:
         await websocket.send_text(json.dumps({"error": f"Internal server error: {str(e)}"}))
+
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))  # Render will pass PORT automatically
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=False)
+
