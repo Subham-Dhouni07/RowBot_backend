@@ -5,4 +5,4 @@ pandas
 python-dotenv
 openpyxl
 langchain_google_genai
-
+tabulate
